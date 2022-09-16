@@ -7,9 +7,9 @@
     <title>Task 10</title>
   </head>
   <body>
-    <div>
+    <div style="margin-left: 20%">
       <h1>Products</h1>
-      <table border="2" style="width: 40%">
+      <table border="2" style="width: 70%; text-align: center">
         <tr>
           <th>Name</th>
           <th>Size/Color</th>
@@ -18,28 +18,53 @@
         <tr>
           <td>Duffle Bag</td>
           <td>
-            <select name="size-color" id="size-color" style="width: 100%">
+            <select name="size-color" id="size-color1" style="width: 100%">
               <option value="sel">-select-</option>
               <option value="size">Small</option>
-              <option value="color">Color</option>
+              <option value="color">LightGrey</option>
             </select>
           </td>
-          <td id="price">-</td>
+          <td id="price1">-</td>
         </tr>
         <tr>
           <td>T-shirts</td>
           <td>
-            <select name="size-color" id="size-color" style="width: 100%">
+            <select name="size-color" id="size-color2" style="width: 100%">
               <option value="sel">-select-</option>
               <option value="size">Small</option>
-              <option value="color">Color</option>
+              <option value="color">LightGrey</option>
             </select>
           </td>
-          <td id="price">-</td>
+          <td id="price2">-</td>
         </tr>
       </table>
+      <br /><br /><br />
+      <button style="margin-left: 35%;"><a href="index.html">Home</a></button>
     </div>
   </body>
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script>
+    $(() => {
+      $("#size-color1").click(() => {
+        let values = document.getElementById("size-color1").value;
+        if (values == "sel") {
+          $("#price1").text("-");
+        } else if (values == "size") {
+          $("#price1").text("1000");
+        } else if ((values = "color")) {
+          $("#price1").text("1200");
+        }
+      });
+      $("#size-color2").click(() => {
+        let values = document.getElementById("size-color2").value;
+        if (values == "sel") {
+          $("#price2").text("-");
+        } else if (values == "size") {
+          $("#price2").text("1000");
+        } else if ((values = "color")) {
+          $("#price2").text("1200");
+        }
+      });
+    });
+  </script>
 </html>
