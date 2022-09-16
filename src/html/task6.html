@@ -7,18 +7,37 @@
     <title>Task6</title>
   </head>
   <body>
-    <h4>Password:</h4>
-    <input type="text" id="pass" />
-    <h4>Confirm Password:</h4>
-    <input type="text" id="confPass" /><br /><br />
-    <input type="button" id="submit" value="Submit" />
+    <div style="text-align: center">
+      <h2 style="color: red">
+        TO Check passwowrd on every character please hit enter while writing
+        password in confirm password section
+      </h2>
+      <h4>Password:</h4>
+      <input type="text" id="pass" />
+      <h4>Confirm Password:</h4>
+      <input type="text" id="confPass" />
+      <p id="res" style="color: red"></p>
+      <br /><br />
+      <input type="button" id="submit" value="Submit" />
+      <br /><br /><br />
+      <button><a href="index.html">Home</a></button>
+    </div>
   </body>
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
   <script>
-    $(function(){
-        let val=$('#pass').val();
-        console.log(val);
-    })
+    $(function () {
+      let passed;
+      $("#pass").mouseleave(() => {
+        passed = $("#pass").val();
+      });
+      $("#confPass").change(() => {
+        if ($("#confPass").val() != passed) {
+          $("#res").text("Password didnt match!!");
+        } else {
+          $("#res").text("");
+        }
+      });
+    });
   </script>
 </html>
