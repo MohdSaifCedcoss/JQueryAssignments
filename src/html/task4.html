@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 4</title>
+  </head>
+  <body>
+    <div style="margin-left:40% ;">
+      <ul>
+        <li id="clothes">
+          <a href="#">Clothes</a>
+          <button id="addBut">+</button>
+        </li>
+      </ul>
+      <ul>
+        <li id="electronics">
+          <a href="#">Electronics</a>
+          <button id="addElectronics">+</button>
+        </li>
+      </ul>
+    </div>
+    <br /><br /><br />
+    <button style="margin-left: 45.8%"><a href="index.html">Home</a></button>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+    $(() => {
+      $("#addBut").click(() => {
+        $("#clothes").append(
+          "<ul id='tshirts'><li><a href='#'>Tshirts</a><button id='tshirtAdd'>+</button></li>"
+        );
+        $("#tshirtAdd").click(() => {
+          $("#tshirts").append(
+            "<ul><li>Polo</li><li>V-neck</li><li>Round-neck</li></ul>"
+          );
+          $("#tshirtAdd").prop("disabled", true);
+        });
+        $("#clothes").append(
+          "<ul id='trousers'><li><a href='#'>Trousers</a><button id='trouserAdd'>+</button></li></ul>"
+        );
+        $("#trouserAdd").click(() => {
+          $("#trousers").append(
+            "<ul><li>Jeans</li><li>Pants</li><li>Chinos</li><li>Cargo-pants</li></ul>"
+          );
+          $("#trouserAdd").prop("disabled", true);
+        });
+        $("#addBut").prop("disabled", true);
+      });
+      $("#addElectronics").click(() => {
+        $("#electronics").append(
+          "<ul id='mobiles'><li><a href='#'>Mobiles</a><button id='mobileAdd'>+</button></li>"
+        );
+        $("#mobileAdd").click(() => {
+          $("#mobiles").append(
+            "<ul><li>Apple</li><li>Samsung</li><li>Xiaomi</li></ul>"
+          );
+          $("#mobileAdd").prop("disabled", true);
+        });
+        $("#electronics").append(
+          "<ul id='tablets'><li><a href='#'>Tablets</a><button id='tabletAdd'>+</button></li></ul>"
+        );
+        $("#tabletAdd").click(() => {
+          $("#tablets").append(
+            "<ul><li>Lenovo Tab 7</li><li>Samsung Tab 8</li></ul>"
+          );
+          $("#tabletAdd").prop("disabled", true);
+        });
+        $("#addElectronics").prop("disabled", true);
+      });
+    });
+  </script>
+</html>

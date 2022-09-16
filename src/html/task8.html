@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 8</title>
+  </head>
+  <body>
+    <div style="margin-left: 45%;">
+      First Name <br />
+      <input type="text" id="fName" /><br /><br />
+      Last Name <br />
+      <input type="text" id="lName" /><br /><br />
+      <input type="button" id="submit" value="Submit" style="margin-left: 10%;" />
+    </div>
+
+    <br /><br /><br />
+    <button style="margin-left: 50.8%"><a href="index.html">Home</a></button>
+  </body>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <script>
+    $(() => {
+      $("#submit").click(() => {
+        let fname = $("#fName").val();
+        let lname = $("#lName").val();
+        console.log(fname + " " + lname);
+        if (fname == "") {
+          $("#fName").css("background-color", "red");
+          alert("First Name is blank");
+        }
+        if (lname == "") {
+          $("#lName").css("background-color", "red");
+          alert("Last Name is Blank");
+        }
+      });
+    });
+  </script>
+</html>
