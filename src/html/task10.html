@@ -39,12 +39,20 @@
         </tr>
       </table>
       <br /><br /><br />
-      <button style="margin-left: 35%;"><a href="index.html">Home</a></button>
+      <button style="margin-left: 35%"><a href="index.html">Home</a></button>
     </div>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script>
     $(() => {
+      $("table tr:even").css({
+        "background-color": "#b3b3cc",
+        color: "white",
+      });
+      $("table tr:odd").css({
+        "background-color": "#00e673",
+        color: "white",
+      });
       $("#size-color1").click(() => {
         let values = document.getElementById("size-color1").value;
         if (values == "sel") {
