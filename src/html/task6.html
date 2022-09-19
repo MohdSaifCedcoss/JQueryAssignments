@@ -8,10 +8,6 @@
   </head>
   <body>
     <div style="text-align: center">
-      <h2 style="color: red">
-        TO Check passwowrd on every character please hit enter while writing
-        password in confirm password section
-      </h2>
       <h4>Password:</h4>
       <input type="text" id="pass" />
       <h4>Confirm Password:</h4>
@@ -27,15 +23,26 @@
   <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
   <script>
     $(function () {
+      if ($("#pass").val() == "" || $("#confPass").val() == "") {
+        $("#res").text("Fields are empty!");
+      }
       let passed;
       $("#pass").mouseleave(() => {
         passed = $("#pass").val();
       });
-      $("#confPass").change(() => {
+      $("#confPass").keypress(() => {
         if ($("#confPass").val() != passed) {
           $("#res").text("Password didnt match!!");
-        } else {
-          $("#res").text("");
+        }
+      });
+      $("#confPass").keyup(() => {
+        if ($("#confPass").val() == passed) {
+          $("#res").text("Password match!!");
+          $("#confPass").keyup(() => {
+            if ($("#confPass").val() != passed) {
+              $("#res").text("Password didnt match!!");
+            }
+          });
         }
       });
     });

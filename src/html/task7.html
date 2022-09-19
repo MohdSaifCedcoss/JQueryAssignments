@@ -8,41 +8,41 @@
   </head>
   <body>
     <div>
-      <button id="evenBut" style="margin-left: 40%;">Color Even Rows</button
+      <button id="evenBut" style="margin-left: 40%">Color Even Rows</button
       ><button id="oddBut" style="margin-left: 40px">Color odd rows</button
       ><br /><br />
-      <table id="table" style="margin-left: 40%;">
-        <tr class="even">
+      <table id="table" style="margin-left: 40%">
+        <tr>
           <th>Company</th>
           <th>Contact</th>
           <th>Country</th>
         </tr>
-        <tr class="odd">
+        <tr>
           <td>Alfred</td>
           <td>Maria Anders</td>
           <td>Germany</td>
         </tr>
-        <tr class="even">
+        <tr>
           <td>Centro</td>
           <td>Francisco Chang</td>
           <td>Mexico</td>
         </tr>
-        <tr class="odd">
+        <tr>
           <td>Ernest</td>
           <td>Roland Mendel</td>
           <td>Austria</td>
         </tr>
-        <tr class="even">
+        <tr>
           <td>Island</td>
           <td>Helen Bernett</td>
           <td>UK</td>
         </tr>
-        <tr class="odd">
+        <tr>
           <td>Laughing</td>
           <td>Yoshi Tannamuri</td>
           <td>China</td>
         </tr>
-        <tr class="even">
+        <tr>
           <td>Magazzini</td>
           <td>Giovanni</td>
           <td>Italy</td>
@@ -55,13 +55,13 @@
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
   <script>
-    $(function(){
-        $('#evenBut').click(()=>{
-            $('.odd').css("background-color","LightGrey");
-        });
-        $('#oddBut').click(()=>{
-            $('.even').css("background-color","DodgerBlue");
-        });
+    $(function () {
+      $("#evenBut").click(() => {
+        $("tr:even").css("background-color", "lightGrey");
+      });
+      $("#oddBut").click(() => {
+        $("tr:odd").css("background-color", "DodgerBlue");
+      });
     });
   </script>
 </html>
