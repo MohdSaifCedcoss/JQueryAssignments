@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Test</title>
+    <title>Task 1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
     <div class="test">
-      <p>Car Details</p>
+      <p id="first">Car Details</p>
       <p>
         In real life, a car is an object. A car has properties like weight and
         color, and methods like start and stop. All cars have the same
@@ -35,7 +35,7 @@
         There are three categories of mobile phones: basic phones, feature
         phones, and smartphones.
       </p>
-      <p>Smartphones are equipped with a QWERTY keypad.</p>
+      <p id="last">Smartphones are equipped with a QWERTY keypad.</p>
     </div>
 
     <br><br><br>
@@ -46,8 +46,10 @@
   <script>
     $(document).ready(function () {
       function colorText() {
-        $(".test").animate({ color: "red" }, 5000);
-        $(".test").animate({ color: "green" }, 5000);
+        $("#first").animate({ color: "red" }, 5000);
+        $("#first").animate({ color: "green" }, 5000);
+        $("#last").animate({ color: "red" }, 5000);
+        $("#last").animate({ color: "green" }, 5000);
         colorText();
       }
       colorText();
