@@ -7,12 +7,17 @@
     <title>Task 8</title>
   </head>
   <body>
-    <div style="margin-left: 45%;">
+    <div style="margin-left: 15%">
       First Name <br />
       <input type="text" id="fName" /><br /><br />
       Last Name <br />
       <input type="text" id="lName" /><br /><br />
-      <input type="button" id="submit" value="Submit" style="margin-left: 10%;" />
+      <input
+        type="button"
+        id="submit"
+        value="Submit"
+        style="margin-left: 10%"
+      />
     </div>
 
     <br /><br /><br />
@@ -25,14 +30,21 @@
       $("#submit").click(() => {
         let fname = $("#fName").val();
         let lname = $("#lName").val();
-        console.log(fname + " " + lname);
         if (fname == "") {
+          $("#fName:text").focus();
           $("#fName").css("background-color", "red");
-          alert("First Name is blank");
+          $("#fName").keypress(() => {
+            $("#fName").css("background-color", "white");
+          });
+          alert("First Name is empty");
         }
-        if (lname == "") {
+        else if (lname == "") {
+          $("#lName:text").focus();
           $("#lName").css("background-color", "red");
-          alert("Last Name is Blank");
+          $("#lName").keypress(() => {
+            $("#lName").css("background-color", "white");
+          });
+          alert("Last Name is empty");
         }
       });
     });
