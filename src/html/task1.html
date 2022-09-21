@@ -6,7 +6,7 @@
   </head>
   <body>
     <div class="test">
-      <p id="first">Car Details</p>
+      <p>Car Details</p>
       <p>
         In real life, a car is an object. A car has properties like weight and
         color, and methods like start and stop. All cars have the same
@@ -16,7 +16,6 @@
         All cars have the same methods, but the methods are performed at
         different times.
       </p>
-    </div>
     <div class="demo">
       <p>Food Details</p>
       <p>The seven food categories are</p>
@@ -35,7 +34,7 @@
         There are three categories of mobile phones: basic phones, feature
         phones, and smartphones.
       </p>
-      <p id="last">Smartphones are equipped with a QWERTY keypad.</p>
+      <p>Smartphones are equipped with a QWERTY keypad.</p>
     </div>
 
     <br><br><br>
@@ -46,10 +45,10 @@
   <script>
     $(document).ready(function () {
       function colorText() {
-        $("#first").animate({ color: "red" }, 5000);
-        $("#first").animate({ color: "green" }, 5000);
-        $("#last").animate({ color: "red" }, 5000);
-        $("#last").animate({ color: "green" }, 5000);
+        $(".test>p:first-child").animate({ color: "red" }, 5000);
+        $(".test>p:first-child").animate({ color: "green" }, 5000);
+        $(".test>p:last-child").animate({ color: "red" }, 5000);
+        $(".test>p:last-child").animate({ color: "green" }, 5000);
         colorText();
       }
       colorText();
