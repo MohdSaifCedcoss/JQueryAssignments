@@ -18,10 +18,11 @@
         <tr>
           <td>Duffle Bag</td>
           <td>
-            <select name="size-color" id="size-color1" style="width: 100%">
+            <select name="size-color" id="size" style="width: 100%">
               <option value="sel">-select-</option>
-              <option value="size">Small</option>
-              <option value="color">LightGrey</option>
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
             </select>
           </td>
           <td id="price1">-</td>
@@ -29,10 +30,11 @@
         <tr>
           <td>T-shirts</td>
           <td>
-            <select name="size-color" id="size-color2" style="width: 100%">
+            <select name="size-color" id="color" style="width: 100%">
               <option value="sel">-select-</option>
-              <option value="size">Small</option>
-              <option value="color">LightGrey</option>
+              <option value="grey">LightGrey</option>
+              <option value="blue">Blue</option>
+              <option value="orange">Orange</option>
             </select>
           </td>
           <td id="price2">-</td>
@@ -53,24 +55,28 @@
         "background-color": "#00e673",
         color: "white",
       });
-      $("#size-color1").click(() => {
-        let values = document.getElementById("size-color1").value;
+      $("#size").click(() => {
+        let values = $("#size").val();
         if (values == "sel") {
           $("#price1").text("-");
-        } else if (values == "size") {
-          $("#price1").text("1000");
-        } else if ((values = "color")) {
-          $("#price1").text("1200");
+        } else if (values == "small") {
+          $("#price1").text(1000);
+        } else if (values == "large") {
+          $("#price1").text(1400);
+        } else if (values == "medium") {
+          $("#price1").text(1100);
         }
       });
-      $("#size-color2").click(() => {
-        let values = document.getElementById("size-color2").value;
+      $("#color").click(() => {
+        let values = document.getElementById("color").value;
         if (values == "sel") {
           $("#price2").text("-");
-        } else if (values == "size") {
-          $("#price2").text("1000");
-        } else if ((values = "color")) {
-          $("#price2").text("1200");
+        } else if (values == "grey") {
+          $("#price2").text(900);
+        } else if (values == "orange") {
+          $("#price2").text(1300);
+        } else if ((values = "blue")) {
+          $("#price2").text(1100);
         }
       });
     });
