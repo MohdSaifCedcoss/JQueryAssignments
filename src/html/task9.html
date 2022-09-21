@@ -8,27 +8,30 @@
   </head>
   <body>
     <div class="form">
-      <input type="text" id="className" placeholder="Enter Class" />
-      <input
-        type="text"
-        name="board"
-        id="boardName"
-        placeholder="Enter Board"
-      />
-      <input
-        type="text"
-        name="totalMarks"
-        id="marks"
-        placeholder="Enter Marks"
-      />
-      <input
-        type="text"
-        name="cdivision"
-        id="division"
-        placeholder="Enter Division"
-      />
-      <button class="addRow">+</button>
-      <button class="removeRow">-</button><br />
+      <div>
+        <input type="text" id="className" placeholder="Enter Class" />
+        <input
+          type="text"
+          name="board"
+          id="boardName"
+          placeholder="Enter Board"
+        />
+        <input
+          type="text"
+          name="totalMarks"
+          id="marks"
+          placeholder="Enter Marks"
+        />
+        <input
+          type="text"
+          name="cdivision"
+          id="division"
+          placeholder="Enter Division"
+        />
+        <button class="addRow">+</button>
+        <button class="removeRow">-</button>
+      </div>
+      <br />
       <p id="res"></p>
     </div>
     <br /><br /><br />
@@ -40,13 +43,13 @@
   <script>
     $(() => {
       $(".form").click((e) => {
+        let str =
+          "<div id='one'><input type='text' placeholder='Enter Class'> <input type='text' placeholder='Enter Board'> <input type='text' placeholder='Enter Marks'> <input type='text' placeholder='Enter Division'> <button class='addRow'>+</button> <button class='removeRow'>-</button></div>";
         if (e.target.className == "addRow") {
-          let str =
-            "<p id='para'><input type='text' placeholder='Enter Class'> <input type='text' placeholder='Enter Board'> <input type='text' placeholder='Enter Marks'> <input type='text' placeholder='Enter Division'> <button class='addRow'>+</button> <button class='removeRow'>-</button>";
-          $("#res").after(str);
+          $(e.target.parentNode).after(str);
         }
         if (e.target.className == "removeRow") {
-          $("#para").remove();
+          $(e.target.parentElement).hide();
         }
       });
     });
