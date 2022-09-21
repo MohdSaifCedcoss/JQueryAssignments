@@ -23,7 +23,7 @@
   <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
   <script>
     $(function () {
-      if ($("#pass").val() == "" || $("#confPass").val() == "") {
+      if ($("#pass").val() == "" && $("#confPass").val() == "") {
         $("#res").text("Fields are empty!");
       }
       let passed;
@@ -36,7 +36,7 @@
         }
       });
       $("#confPass").keyup(() => {
-        if ($("#confPass").val() == passed) {
+        if ($("#confPass").val() == passed && passed !="") {
           $("#res").text("Password match!!");
           $("#confPass").keyup(() => {
             if ($("#confPass").val() != passed) {
