@@ -7,17 +7,20 @@
     <title>Task 4</title>
   </head>
   <body>
-    <div style="margin-left:40% ;">
+    <div style="margin-left: 40%">
       <ul>
-        <li id="clothes">
+        <li>
           <a href="#">Clothes</a>
-          <button id="addBut">+</button>
+          <button onclick="addingClothes()">+</button>
+          <ul id="clothes">
+          </ul>
         </li>
       </ul>
       <ul>
-        <li id="electronics">
+        <li>
           <a href="#">Electronics</a>
-          <button id="addElectronics">+</button>
+          <button onclick="addingElectronics()">+</button>
+          <ul id="electronics"></ul>
         </li>
       </ul>
     </div>
@@ -27,49 +30,54 @@
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
   <script>
-    $(() => {
-      $("#addBut").click(() => {
+    $(() => {});
+    function addingClothes() {
+      let clothName = prompt("Cloth Name");
+      if (clothName == "") {
+        alert("Add the data");
+      } else {
         $("#clothes").append(
-          "<ul id='tshirts'><li><a href='#'>Tshirts</a><button id='tshirtAdd'>+</button></li>"
+          "<li><a href='#'>" +
+            clothName +
+            "</a><button onclick='addingMoreClothes()'>+</button></li>"
         );
-        $("#tshirtAdd").click(() => {
-          $("#tshirts").append(
-            "<ul><li>Polo</li><li>V-neck</li><li>Round-neck</li></ul>"
-          );
-          $("#tshirtAdd").prop("disabled", true);
-        });
+      }
+    }
+    function addingMoreClothes(){
+       let clothName = prompt("Cloth Name");
+      if (clothName == "") {
+        alert("Add the data");
+      } else {
         $("#clothes").append(
-          "<ul id='trousers'><li><a href='#'>Trousers</a><button id='trouserAdd'>+</button></li></ul>"
+          "<ul><li><a href='#'>" +
+            clothName +
+            "</li>"
         );
-        $("#trouserAdd").click(() => {
-          $("#trousers").append(
-            "<ul><li>Jeans</li><li>Pants</li><li>Chinos</li><li>Cargo-pants</li></ul>"
-          );
-          $("#trouserAdd").prop("disabled", true);
-        });
-        $("#addBut").prop("disabled", true);
-      });
-      $("#addElectronics").click(() => {
+      }
+    }
+    function addingElectronics() {
+      let electronicName = prompt("Electronic Name");
+      if (electronicName == "") {
+        alert("Add the data");
+      } else {
         $("#electronics").append(
-          "<ul id='mobiles'><li><a href='#'>Mobiles</a><button id='mobileAdd'>+</button></li>"
+          "<li><a href='#'>" +
+            electronicName +
+            "</a><button onclick='addingMoreElectronics()'>+</button></li>"
         );
-        $("#mobileAdd").click(() => {
-          $("#mobiles").append(
-            "<ul><li>Apple</li><li>Samsung</li><li>Xiaomi</li></ul>"
-          );
-          $("#mobileAdd").prop("disabled", true);
-        });
+      }
+    }
+    function addingMoreElectronics(){
+       let electronicName = prompt("electronic Name");
+      if (electronicName == "") {
+        alert("Add the data");
+      } else {
         $("#electronics").append(
-          "<ul id='tablets'><li><a href='#'>Tablets</a><button id='tabletAdd'>+</button></li></ul>"
+          "<ul><li><a href='#'>" +
+            electronicName +
+            "</li>"
         );
-        $("#tabletAdd").click(() => {
-          $("#tablets").append(
-            "<ul><li>Lenovo Tab 7</li><li>Samsung Tab 8</li></ul>"
-          );
-          $("#tabletAdd").prop("disabled", true);
-        });
-        $("#addElectronics").prop("disabled", true);
-      });
-    });
+      }
+    }
   </script>
 </html>
