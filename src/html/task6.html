@@ -27,7 +27,7 @@
         $("#res").text("Fields are empty!");
       }
       let passed;
-      $("#pass").mouseleave(() => {
+      $("#pass").on("change keyup paste click", function () {
         passed = $("#pass").val();
       });
       $("#confPass").keypress(() => {
@@ -36,7 +36,7 @@
         }
       });
       $("#confPass").keyup(() => {
-        if ($("#confPass").val() == passed && passed !="") {
+        if ($("#confPass").val() == passed && passed != "") {
           $("#res").text("Password match!!");
           $("#confPass").keyup(() => {
             if ($("#confPass").val() != passed) {
